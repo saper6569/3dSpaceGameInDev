@@ -18,8 +18,11 @@ import com.jme3.light.DirectionalLight;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
+import environment.Lighting;
 
 public class main extends SimpleApplication implements ActionListener {
+
+    Lighting light = new Lighting();
 
     private Spatial sceneModel;
     private BulletAppState bulletAppState;
@@ -46,7 +49,6 @@ public class main extends SimpleApplication implements ActionListener {
         viewPort.setBackgroundColor(new ColorRGBA(0.7f, 0.8f, 1f, 1f));
         flyCam.setMoveSpeed(100);
         setUpKeys();
-        setUpLight();
 
         assetManager.registerLocator("town.zip", ZipLocator.class);
         sceneModel = assetManager.loadModel("main.scene");
@@ -62,30 +64,16 @@ public class main extends SimpleApplication implements ActionListener {
         player.setFallSpeed(30);
 
         rootNode.attachChild(sceneModel);
+
+        //light
+        rootNode.addLight(Lighting.setUpLight(ColorRGBA.White.mult(1.3f)));
+        rootNode.addLight(Lighting.setUpLight(new Vector3f(2.8f, -2.8f, -2.8f), ColorRGBA.White));
+
         bulletAppState.getPhysicsSpace().add(landscape);
         bulletAppState.getPhysicsSpace().add(player);
 
         player.setGravity(60);
         player.setPhysicsLocation(new Vector3f(0, 10, 0));
-
-        initSound();
-    }
-
-    private void initSound() {
-        walkingSounds = new AudioNode(assetManager, "Sound/footsteps.wav", AudioData.DataType.Stream);
-        walkingSounds.setPositional(false);
-        walkingSounds.setLooping(false);
-    }
-
-    private void setUpLight() {
-        AmbientLight al = new AmbientLight();
-        al.setColor(ColorRGBA.White.mult(1.3f));
-        rootNode.addLight(al);
-
-        DirectionalLight dl = new DirectionalLight();
-        dl.setColor(ColorRGBA.White);
-        dl.setDirection(new Vector3f(2.8f, -2.8f, -2.8f).normalizeLocal());
-        rootNode.addLight(dl);
     }
 
     public void initCrossHairs(String crossHair) {
