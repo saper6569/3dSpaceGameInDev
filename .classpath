@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="assets"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/ant.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/ant-launcher.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/asm-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/gson.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jbullet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jinput.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jinput-natives-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-desktop.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-effects.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-jbullet.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-jogg.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-lwjgl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-networking.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-niftygui.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-plugins.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-terrain.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jme3-testdata.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jmf.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/j-ogg-all.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/jsr305.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/lwjgl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/lwjgl-platform-natives-linux.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/lwjgl-platform-natives-osx.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/lwjgl-platform-natives-windows.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/nifty.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/nifty-default-controls.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/nifty-examples.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/nifty-style-black.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/stack-alloc.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/vecmath.jar"/>
+	<classpathentry kind="lib" path="C:/Users/saper/jME3.4.0-stable/lib/xpp3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
