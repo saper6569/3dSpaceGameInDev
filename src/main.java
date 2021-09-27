@@ -1,7 +1,5 @@
 import com.jme3.app.SimpleApplication;
 import com.jme3.asset.plugins.ZipLocator;
-import com.jme3.audio.AudioData;
-import com.jme3.audio.AudioKey;
 import com.jme3.audio.AudioNode;
 import com.jme3.bullet.BulletAppState;
 import com.jme3.bullet.collision.shapes.CapsuleCollisionShape;
@@ -19,22 +17,18 @@ import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
 import com.jme3.scene.Spatial;
 import environment.Lighting;
+import gui.Overlays;
+import screens.MainScreenSetup;
 
 public class main extends SimpleApplication implements ActionListener {
 
-    Lighting light = new Lighting();
+    MainScreenSetup mainScreenSetup = new MainScreenSetup();
 
-    private Spatial sceneModel;
-    private BulletAppState bulletAppState;
-    private RigidBodyControl landscape;
-    private CharacterControl player;
     private Vector3f walkDirection = new Vector3f();
     private boolean left = false, right = false, up = false, down = false, notWalking = true;
 
     private Vector3f camDir = new Vector3f();
     private Vector3f camLeft = new Vector3f();
-
-    private AudioNode walkingSounds;
 
     public static void main(String[] args) {
         main app = new main();
@@ -43,47 +37,10 @@ public class main extends SimpleApplication implements ActionListener {
 
     @Override
     public void simpleInitApp() {
-        initCrossHairs("+");
-        bulletAppState = new BulletAppState();
-        stateManager.attach(bulletAppState);
+        stateManager.attach(mainScreenSetup);
         viewPort.setBackgroundColor(new ColorRGBA(0.7f, 0.8f, 1f, 1f));
         flyCam.setMoveSpeed(100);
         setUpKeys();
-
-        assetManager.registerLocator("town.zip", ZipLocator.class);
-        sceneModel = assetManager.loadModel("main.scene");
-        sceneModel.setLocalScale(2f);
-
-        CollisionShape sceneShape = CollisionShapeFactory.createMeshShape(sceneModel);
-        landscape = new RigidBodyControl(sceneShape, 0);
-        sceneModel.addControl(landscape);
-
-        CapsuleCollisionShape capsuleShape = new CapsuleCollisionShape(1.5f, 6f, 1);
-        player = new CharacterControl(capsuleShape, 0.05f);
-        player.setJumpSpeed(20);
-        player.setFallSpeed(30);
-
-        rootNode.attachChild(sceneModel);
-
-        //light
-        rootNode.addLight(Lighting.setUpLight(ColorRGBA.White.mult(1.3f)));
-        rootNode.addLight(Lighting.setUpLight(new Vector3f(2.8f, -2.8f, -2.8f), ColorRGBA.White));
-
-        bulletAppState.getPhysicsSpace().add(landscape);
-        bulletAppState.getPhysicsSpace().add(player);
-
-        player.setGravity(60);
-        player.setPhysicsLocation(new Vector3f(0, 10, 0));
-    }
-
-    public void initCrossHairs(String crossHair) {
-        setDisplayStatView(false);
-        guiFont = assetManager.loadFont("Interface/Fonts/Default.fnt");
-        BitmapText ch = new BitmapText(guiFont, false);
-        ch.setSize(guiFont.getCharSet().getRenderedSize() * 2);
-        ch.setText(crossHair);
-        ch.setLocalTranslation( settings.getWidth() / 2 - ch.getLineWidth()/2, settings.getHeight() / 2 + ch.getLineHeight()/2, 0);
-        guiNode.attachChild(ch);
     }
 
     private void setUpKeys() {
