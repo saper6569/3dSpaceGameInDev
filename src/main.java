@@ -1,26 +1,15 @@
 import com.jme3.app.SimpleApplication;
-import com.jme3.asset.plugins.ZipLocator;
-import com.jme3.audio.AudioNode;
-import com.jme3.bullet.BulletAppState;
-import com.jme3.bullet.collision.shapes.CapsuleCollisionShape;
-import com.jme3.bullet.collision.shapes.CollisionShape;
-import com.jme3.bullet.control.CharacterControl;
-import com.jme3.bullet.control.RigidBodyControl;
-import com.jme3.bullet.util.CollisionShapeFactory;
-import com.jme3.font.BitmapText;
+import com.jme3.input.FlyByCamera;
+import com.jme3.input.InputManager;
 import com.jme3.input.KeyInput;
 import com.jme3.input.controls.ActionListener;
+import com.jme3.input.controls.InputListener;
 import com.jme3.input.controls.KeyTrigger;
-import com.jme3.light.AmbientLight;
-import com.jme3.light.DirectionalLight;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.Vector3f;
-import com.jme3.scene.Spatial;
-import environment.Lighting;
-import gui.Overlays;
-import screens.MainScreenSetup;
+import game.screens.MainScreenSetup;
 
-public class main extends SimpleApplication implements ActionListener {
+class main extends SimpleApplication implements ActionListener {
 
     MainScreenSetup mainScreenSetup = new MainScreenSetup();
 
@@ -99,6 +88,14 @@ public class main extends SimpleApplication implements ActionListener {
 
         player.setWalkDirection(walkDirection);
         cam.setLocation(player.getPhysicsLocation());
+    }
+
+    public FlyByCamera getFlyCam () {
+        return flyCam;
+    }
+
+    public InputManager getInputManager () {
+        return inputManager;
     }
 }
 

@@ -1,4 +1,4 @@
-package gui;
+package game.gui;
 
 import com.jme3.app.Application;
 import com.jme3.app.SimpleApplication;
@@ -16,6 +16,7 @@ public class Overlays extends AbstractAppState {
         this.app = (SimpleApplication)app;
 
         this.app. setDisplayStatView(false);
+        this.app.
         this.app.getGuiNode() = this.app.getAssetManager().loadFont("Interface/Fonts/Default.fnt");
         BitmapText ch = new BitmapText(guiFont, false);
         ch.setSize(guiFont.getCharSet().getRenderedSize() * 2);
