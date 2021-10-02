@@ -1,4 +1,4 @@
-package environment;
+package game.environment;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.light.AmbientLight;
