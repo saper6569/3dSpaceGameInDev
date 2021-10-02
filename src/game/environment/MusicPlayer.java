@@ -1,4 +1,4 @@
-package environment;
+package game.environment;
 
 public class MusicPlayer {
 
