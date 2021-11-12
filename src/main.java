@@ -18,9 +18,5 @@ class main extends SimpleApplication {
         viewPort.setBackgroundColor(new ColorRGBA(0.7f, 0.8f, 1f, 1f));
         flyCam.setMoveSpeed(100);
     }
-
-    public BitmapFont getFont() {
-        return guiFont;
-    }
 }
 
