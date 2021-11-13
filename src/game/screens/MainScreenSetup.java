@@ -45,7 +45,7 @@ public class MainScreenSetup extends AbstractAppState {
         player.initialize(this.app.getRootNode());
         stateManager.attach(movement);
 
-        sceneModel = this.app.getAssetManager().loadModel("Models/starbase.gltf");
+        sceneModel = this.app.getAssetManager().loadModel("SpaceShip/starbase.gltf");
         sceneModel.setLocalScale(2.5f);
         this.app.getRootNode().attachChild(sceneModel);
 
@@ -63,7 +63,6 @@ public class MainScreenSetup extends AbstractAppState {
 
     @Override
     public void update(float delta) {
-        player.update(this.app.getCamera());
     }
 
     @Override
