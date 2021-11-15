@@ -84,3 +84,4 @@ public class Movement extends AbstractAppState implements ActionListener {
         this.app.getCamera().setLocation(Player.getPhysicsLocation());
     }
 }
+
