@@ -45,7 +45,7 @@ public class MainScreenSetup extends AbstractAppState {
         player.initialize(this.app.getRootNode());
         stateManager.attach(movement);
 
-        sceneModel = this.app.getAssetManager().loadModel("SpaceShip/starbase.gltf");
+        sceneModel = this.app.getAssetManager().loadModel("Starbase/starbase.glb");
         sceneModel.setLocalScale(2.5f);
         this.app.getRootNode().attachChild(sceneModel);
 
@@ -53,7 +53,7 @@ public class MainScreenSetup extends AbstractAppState {
         landscape = new RigidBodyControl(sceneShape, 0);
         sceneModel.addControl(landscape);
 
-        this.app.getRootNode().addLight(Lighting.setUpLight(ColorRGBA.White.mult(10)));
+        this.app.getRootNode().addLight(Lighting.setUpLight(ColorRGBA.White.mult(1000)));
 
         bulletAppState = new BulletAppState();
         stateManager.attach(bulletAppState);
