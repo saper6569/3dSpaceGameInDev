@@ -53,7 +53,7 @@ public class MainScreenSetup extends AbstractAppState {
         landscape = new RigidBodyControl(sceneShape, 0);
         sceneModel.addControl(landscape);
 
-        this.app.getRootNode().addLight(Lighting.setUpLight(ColorRGBA.White.mult(1000)));
+        this.app.getRootNode().addLight(Lighting.setUpLight(ColorRGBA.White.mult(10)));
 
         bulletAppState = new BulletAppState();
         stateManager.attach(bulletAppState);
