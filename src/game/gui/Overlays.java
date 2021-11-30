@@ -21,7 +21,7 @@ public class Overlays extends AbstractAppState {
         guiFont = this.app.getAssetManager().loadFont("Interface/Fonts/Default.fnt");
         BitmapText cross = new BitmapText(guiFont, false);
         cross.setSize(guiFont.getCharSet().getRenderedSize() * 2);
-        cross.setText("X");
+        cross.setText("+");
         cross.setLocalTranslation( this.app.getCamera().getWidth() / 2 - cross.getLineWidth()/2, this.app.getCamera().getHeight() / 2 + cross.getLineHeight()/2, 0);
         this.app.getGuiNode().attachChild(cross);
     }
